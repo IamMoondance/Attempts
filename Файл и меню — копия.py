@@ -32,6 +32,7 @@ while choice != 0:
         print('Введите название для файла, заканчивая точкой и форматом: ')
         Name = str(input())
         V1 = open(Name,'w')
+        V1.close()
     if choice == 2:
         print()
         V2 = open('states and languages.txt','a+')
