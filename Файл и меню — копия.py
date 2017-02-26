@@ -42,8 +42,6 @@ while choice != 0:
         for i in range(n):
             rec = input()
             V2.write(rec +'\n')
-        V2.close()
-        V2 = open('states and languages.txt','r')
         V2.seek(0)
         base2 = V2.readline()
         while base2 != '':
