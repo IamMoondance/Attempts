@@ -8,11 +8,7 @@
 # 5) выход.
 
 choice = None
-V4 = open('states and languages.txt','r')
-base = V4.readline()
-while base != '':
-    base = V4.readline()
-V4.close()
+
 while choice != 0:
     print('Меню:')
     print(
@@ -24,8 +20,10 @@ while choice != 0:
     4 - Вывод всего содержимого файла
     '''
     )
-
-    choice = int(input('Выберете один из предложенных вариантов: '))
+    try:
+        choice = int(input('Выберете один из предложенных вариантов: '))
+    except:
+        choice = 0
     if choice == 0:
         print('Выполнен выход')
     if choice == 1:
@@ -38,16 +36,14 @@ while choice != 0:
         V2 = open('states and languages.txt','a+')
         n = int(input('Введите число строк, которые хотите добавить в файл: '))
         print('Введите строки, которые хотите добавить (по одной в строке): ')
-        V2.seek(0)
         for i in range(n):
             rec = input()
             V2.write(rec +'\n')
         V2.seek(0)
         base2 = V2.readline()
         while base2 != '':
+            print(base2,end='')
             base2 = V2.readline()
-        for i in range(len(base2)):
-            print(base2[i],end='')
         V2.close()
         print()
     if choice == 3:
@@ -59,7 +55,6 @@ while choice != 0:
     3 - Искать среди стран
             '''
             )
-        print('Если записи не окажется, в файл добавится весь список записей.')
         print('Пожалуйста, выберете, введя цифру, где производить поиск: ')
         where = int(input())
         count = 0
@@ -70,24 +65,22 @@ while choice != 0:
             phrase = input('Введите искомое значение: ')
             V3 = open('states and languages.txt','r')
             V3.seek(0)
+            Rez = open('Rez.txt','w')
+            Rez.write("Ищем '"+phrase+"' "+['',"везде","среди языков","среди стран"][where]+"\n")
             base3 = V3.readline()
             while base3 != '':
-                base3 = V3.readline()
-            for i in base3:
                 if where == 1:
-                    rec = i
+                    rec = base3
                 else:
-                    rec = i.split(' - ')[3-where]
-                    Rez = open('Rez.txt','a')
-                    Rez.write(i + '\n')
-                    Rez.close()
+                    rec = base3.split(' - ')[3-where]
                 if phrase in rec:
-                    print(i,end='')
-                    Rez = open('Rez.txt','a')
-                    Rez.write(i + '\n')
+                    print(base3,end='')
+                    Rez.write(base3)
                     count += 1
-                    Rez.close()
+                base3 = V3.readline()
             print('Найдено записей:',count)
+            Rez.write('\nНайдено записей: '+str(count))
+            Rez.close()
 
             print()
     #Выводим всё содержимое файла:
@@ -96,7 +89,9 @@ while choice != 0:
         print('Страна и государственный язык:')
         print()
         V4 = open('states and languages.txt','r')
-        for i in range(len(base)):
-            print(base[i],end='')
+        base = V4.readline()
+        while base != '':
+            print(base,end='')
+            base = V4.readline()
         V4.close()
         print()
