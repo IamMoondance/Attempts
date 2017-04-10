@@ -97,10 +97,12 @@ while c != 0:
         for i in range(len(arr)):
             print(bubble(arr)[i], end=' ')
     else:
+        bubble(arr)
         print('Для массива из',len(arr),'элементов')
+    ftime = perfc()
     print()
     print('Время на выполнение:')
-    print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
+    print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
     print()
 
     stime = perfc()
@@ -109,10 +111,12 @@ while c != 0:
         for i in range(len(arr)):
             print(bubble_optimized(arr)[i], end=' ')
     else:
+        bubble_optimized(arr)
         print('Для массива из',len(arr),'элементов')
+    ftime = perfc()
     print()
     print('Время на выполнение:')
-    print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
+    print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
     print()
 
     stime = perfc()
@@ -121,10 +125,12 @@ while c != 0:
         for i in range(len(arr)):
             print(bubble_optimized2(arr)[i], end=' ')
     else:
+        bubble_optimized2(arr)
         print('Для массива из',len(arr),'элементов')
+    ftime = perfc()
     print()
     print('Время на выполнение:')
-    print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
+    print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
     print()
 
     stime = perfc()
@@ -133,8 +139,10 @@ while c != 0:
         for i in range(len(arr)):
             print(sort(arr)[i], end=' ')
     else:
+        sort(arr)
         print('Для массива из',len(arr),'элементов')
+    ftime = perfc()
     print()
     print('Время на выполнение:')
-    print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
+    print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
     print()
