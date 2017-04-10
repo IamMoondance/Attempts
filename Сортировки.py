@@ -33,7 +33,7 @@ def bubble_optimized2(i_arr):
             i = k
     return arr
 
-def bubble(i_arr): 
+def bubble(i_arr):
     arr = i_arr[:]
     for i in range(len(arr)-1, 1, -1):
         for j in range(i):
@@ -50,29 +50,29 @@ while c != 0:
 
     print('Выберете, каким способом задаётся целочисленный массив:')
     print('''
-    1 - введённый по умолчанию пример
-    2 - введённый по умолчанию пример (отсортированный по возрастанию)
-    3 - введённый по умолчанию пример (отсортированный по убыванию)
-    4 - ручной ввод
-    5 - создание с помощью рандома
-    0 - выйти из программы
+    1 - создание с помощью рандома
+    0 - выход из программы
     ''')
-
+    #2 - введённый по умолчанию пример
+    #3 - введённый по умолчанию пример (отсортированный по возрастанию)
+    #4 - введённый по умолчанию пример (отсортированный по убыванию)
+    #5 - ручной ввод
+    
     c = int(input())
+    #if c == 2:
+        #arr = [1, 3, 6, 9, 7, 8, 4, 5, 2]
+    #elif c == 3:
+        #arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    #elif c == 4:
+        #arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+    #elif c == 5:
+        #arr = []
+        #n = int(input('Введите, какой длины хотите задать массив: '))
+        #print('Введите числа (по одному в строке): ')
+        #for i in range(n):
+            #a = int(input())
+            #arr.append(a)
     if c == 1:
-        arr = [1, 3, 6, 9, 7, 8, 4, 5, 2]
-    elif c == 2:
-        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    elif c == 3:
-        arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]
-    elif c == 4:
-        arr = []
-        n = int(input('Введите, какой длины хотите задать массив: '))
-        print('Введите числа (по одному в строке): ')
-        for i in range(n):
-            a = int(input())
-            arr.append(a)
-    elif c == 5:
         n = int(input('Введите, из скольких элементов составить список: '))
         a, b = map(int, input('Введите начало и конец промежутка \
 для выбора (через пробел): ').split())
@@ -83,15 +83,21 @@ while c != 0:
 
     print()
     print('Исходный массив:')
-    for i in range(len(arr)):
-        print(arr[i], end=' ')
+    if len(arr) <= 100:
+        for i in range(len(arr)):
+            print(arr[i], end=' ')
+    else:
+        print('Массив из',len(arr),'элементов')
     print()
     print()
 
     stime = perfc()
     print('Метод пузырька:')
-    for i in range(len(arr)):
-        print(bubble(arr)[i], end=' ')
+    if len(arr) <= 100:
+        for i in range(len(arr)):
+            print(bubble(arr)[i], end=' ')
+    else:
+        print('Для массива из',len(arr),'элементов')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
@@ -99,8 +105,11 @@ while c != 0:
 
     stime = perfc()
     print('Улучшенный метод пузырька с одним изменением:')
-    for i in range(len(arr)):
-        print(bubble_optimized(arr)[i], end=' ')
+    if len(arr) <= 100:
+        for i in range(len(arr)):
+            print(bubble_optimized(arr)[i], end=' ')
+    else:
+        print('Для массива из',len(arr),'элементов')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
@@ -108,8 +117,11 @@ while c != 0:
 
     stime = perfc()
     print('Улучшенный метод пузырька с двумя изменениями:')
-    for i in range(len(arr)):
-        print(bubble_optimized2(arr)[i], end=' ')
+    if len(arr) <= 100:
+        for i in range(len(arr)):
+            print(bubble_optimized2(arr)[i], end=' ')
+    else:
+        print('Для массива из',len(arr),'элементов')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
@@ -117,8 +129,11 @@ while c != 0:
 
     stime = perfc()
     print('С помощью встроенной функции sorted():')
-    for i in range(len(arr)):
-        print(sort(arr)[i], end=' ')
+    if len(arr) <= 100:
+        for i in range(len(arr)):
+            print(sort(arr)[i], end=' ')
+    else:
+        print('Для массива из',len(arr),'элементов')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(perfc() - stime),'секунд на',len(arr),'элементов')
