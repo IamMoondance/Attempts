@@ -91,57 +91,45 @@ while c != 0:
     print()
     print()
 
-    stime = perfc()
     print('Метод пузырька:')
-    if len(arr) <= 100:
-        for i in range(len(arr)):
-            print(bubble(arr)[i], end=' ')
-    else:
-        bubble(arr)
-        print('Для массива из',len(arr),'элементов')
+    stime = perfc()
+    new_arr = bubble(arr)
     ftime = perfc()
+    if n <= 100:
+        for i in new_arr: print(i, end = ' ')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
     print()
 
-    stime = perfc()
     print('Улучшенный метод пузырька с одним изменением:')
-    if len(arr) <= 100:
-        for i in range(len(arr)):
-            print(bubble_optimized(arr)[i], end=' ')
-    else:
-        bubble_optimized(arr)
-        print('Для массива из',len(arr),'элементов')
+    stime = perfc()
+    new_arr = bubble_optimized(arr)
     ftime = perfc()
+    if n <= 100:
+        for i in new_arr: print(i, end = ' ')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
     print()
 
-    stime = perfc()
     print('Улучшенный метод пузырька с двумя изменениями:')
-    if len(arr) <= 100:
-        for i in range(len(arr)):
-            print(bubble_optimized2(arr)[i], end=' ')
-    else:
-        bubble_optimized2(arr)
-        print('Для массива из',len(arr),'элементов')
+    stime = perfc()
+    new_arr = bubble_optimized2(arr)
     ftime = perfc()
+    if n <= 100:
+        for i in new_arr: print(i, end = ' ')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
     print()
 
-    stime = perfc()
     print('С помощью встроенной функции sorted():')
-    if len(arr) <= 100:
-        for i in range(len(arr)):
-            print(sort(arr)[i], end=' ')
-    else:
-        sort(arr)
-        print('Для массива из',len(arr),'элементов')
+    stime = perfc()
+    new_arr = sort(arr)
     ftime = perfc()
+    if n <= 100:
+        for i in new_arr: print(i, end = ' ')
     print()
     print('Время на выполнение:')
     print('{:0.5f}'.format(ftime - stime),'секунд на',len(arr),'элементов')
