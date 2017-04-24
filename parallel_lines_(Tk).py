@@ -15,7 +15,7 @@ print("Enter pair of points of line; empty line to stop")
 buf = input()
 while buf != '':
     buf = list(map(float, buf.split()))
-    if (len(buf) != 4) or (buf[0] - buf[2] == 0) or (buf[1] - buf[3] == 0):
+    if (len(buf) != 4) or ((buf[0] - buf[2] == 0) and (buf[1] - buf[3] == 0)):
         print("Incorrect line!", buf)
     else:
         lines.append(buf)
