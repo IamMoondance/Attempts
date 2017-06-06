@@ -1,0 +1,28 @@
+Tests of module A2:
+
+Input:                                   Output:
+1001                                     True
+92071                                    False
+E1t1                                     False
+101,1011                                 False
+111-101                                  False
+                                         True
+
+Input:                                   Output:
+[-2]                                     assert
+
+Tests of module A3:
+
+Input:                                   Output:
+100011                                   23
+11101111                                 EF
+101010                                   2A
+a2                                       Incorrect input data
+                             
+-01                                      Incorrect input data
+
+Input:                                   Output:
+cdc                                      assert
+
+Input:                                   Output:
+testfile = open("TESTFILE.txt", "r")     assert

@@ -1,0 +1,46 @@
+Input:
+1001
+1010101011
+Output:
+9
+2AB
+Input:
+1010101100000010100
+10001010101011111111
+11100000
+Output:
+55814
+8AAFF
+E0
+Input:
+0
+Output:
+0
+Input:
+111-101
+Output:
+Incorrect input data
+Input:
+1001
+92071
+1100001101
+Output:
+9
+Incorrect input data
+30D
+Input:
+101,1011
+101
+1011
+Output:
+Incorrect input data
+5
+B
+Input:
+E1t1
+Output:
+Incorrect input data
+Input:
+
+Output:
+The source file is empty
